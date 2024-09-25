@@ -1,9 +1,14 @@
 import streamlit as st
 from langchain_community.document_loaders import WebBaseLoader
-
+import os
+os.environ['USER_AGENT'] = 'ColdEmailGeneratorTool/1.0'
 from chains import Chain
 from portfolio import Portfolio
 from utils import clean_text
+from langchain.globals import set_verbose, get_verbose
+
+# Set verbosity
+set_verbose(True)  # or False to disable verbose output
 
 
 def create_streamlit_app(llm, portfolio, clean_text):
