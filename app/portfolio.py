@@ -1,6 +1,18 @@
 import pandas as pd
 import chromadb
 import uuid
+import sys
+import sqlite3
+
+# Force `sqlite3` to be used in place of `pysqlite3`
+sys.modules["pysqlite3"] = sqlite3
+
+# Now import ChromaDB
+from chromadb import Client
+
+# Initialize your ChromaDB client or continue with your existing ChromaDB code
+client = Client()
+
 
 
 class Portfolio:
